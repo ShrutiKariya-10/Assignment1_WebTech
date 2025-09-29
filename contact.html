@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <!-- Font Awesome for Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      color: #fff;
+    }
+
+    /* ===== Navbar ===== */
+    .navbar {
+      background: linear-gradient(90deg, #1e4945, #1e4945);
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+    .navbar a:hover {
+      color: #ffcc00;
+    }
+
+    /* Overlay for readability */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .contact-container {
+      position: relative;
+      z-index: 1;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contact-container h1 {
+      font-size: 3rem;
+      margin-bottom: 50px;
+      color: #fff;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+    }
+
+    /* Section Styles (Cards) */
+    .section {
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+      backdrop-filter: blur(15px);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: left;
+    }
+
+    .section:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    }
+
+    .section h2 {
+      margin-bottom: 25px;
+      color: #fff;
+      text-align: center;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    }
+
+    /* Contact Form Styles */
+    .contact-form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 500;
+      color: #fff;
+      text-align: left;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .contact-form input,
+    .contact-form select {
+      background: rgba(255,255,255,0.9);
+      color: #333;
+    }
+
+    .contact-form textarea {
+      background: rgba(255,255,255,0.9);
+      color: #333;
+      height: 120px;
+      resize: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      box-shadow: 0 0 10px rgba(116,235,213,0.8);
+    }
+
+    .contact-form button {
+      margin-top: 25px;
+      padding: 14px 25px;
+      border: none;
+      background: linear-gradient(to right, #74ebd5, #ACB6E5);
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+      display: block;
+      width: 100%;
+    }
+
+    .contact-form button:hover {
+      background: linear-gradient(to right, #ACB6E5, #74ebd5);
+      transform: scale(1.05);
+    }
+
+    /* Contact Info Styles */
+    .contact-info {
+      text-align: center;
+    }
+
+    .contact-info p {
+      margin: 12px 0;
+      font-size: 1.1rem;
+      color: #fff;
+    }
+
+    .contact-info i {
+      color: #74ebd5;
+      margin-right: 10px;
+    }
+
+    .social-icons {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 1.8rem;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #74ebd5;
+      transform: scale(1.2);
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px){
+      .section {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Hero Section ===== -->
+  <header class="hero">
+    <div class="navbar">
+      <a href="home.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+    </div>
+  </header>
+
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    
+    <!-- Get in Touch Section -->
+    <div class="section contact-form">
+      <h2>Get in Touch</h2>
+      <form action="https://formspree.io/f/mwprlwqo" method="POST">
+        <input type="hidden" name="_subject" value="New Contact Request">
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender">
+          <option value="">Select Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+        
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="">Select Country</option>
+          <option>India</option>
+          <option>USA</option>
+          <option>UK</option>
+          <option>Canada</option>
+          <option>Australia</option>
+        </select>
+        
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message..."></textarea>
+        
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+    
+    <!-- Our Contact Info Section -->
+    <div class="section contact-info">
+      <h2>Our Contact Info</h2>
+      <p><i class="fas fa-envelope"></i> Email: shrutikariya1011@gmail.com</p>
+      <p><i class="fas fa-phone"></i> Phone: +91 9484645545</p>
+      
+      <h3 style="color:#fff;">Follow Us</h3>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/shruti_kariya_10/?next=%2F"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/shruti-kariya-927129207/"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>© 2025 WanderWorld Travel. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
